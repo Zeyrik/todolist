@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TasksService } from './services/tasks.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,24 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Todolist';
+  newTask: string = "";
+  public isCompleted?: boolean = false;
+  constructor(public taskService: TasksService) {}
+
+  add(newTask: string) {
+    this.taskService.addTask(newTask);
+    this.newTask = "";
+  }
+
+  delete(num: number) {
+    this.taskService.deleteTask(num);
+  }
+
+  complete(task: string){
+    this.taskService.completeTask(task);
+  }
+  clear(){
+    this.taskService.clearCompleteTask();
+  }
 }
+
