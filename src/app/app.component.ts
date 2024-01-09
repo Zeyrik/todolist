@@ -8,8 +8,7 @@ import { TasksService } from './services/tasks.service';
 })
 export class AppComponent {
   title = 'Todolist';
-  newTask: string = "";
-  public isCompleted?: boolean = false;
+  public newTask: string = "";
   constructor(public taskService: TasksService) {}
 
   add(newTask: string) {

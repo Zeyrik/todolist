@@ -4,9 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TasksService {
-  tasks: string[] = [];
-  listTasks: string[] = [];
-  public isCompleted?: boolean  = false;
+  public tasks: string[] = [];
+  public listTasks: string[] = [];
   
   addTask(newTask: string) {
     if (newTask !== "") {
